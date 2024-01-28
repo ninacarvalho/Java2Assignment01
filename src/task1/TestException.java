@@ -18,8 +18,8 @@ public class TestException {
 		// TODO Auto-generated method stub
 		
 		// create two Triangle class objects
-		TriangleWithException triangle1;
-		TriangleWithException triangle2;
+		task1.TriangleWithException triangle1;
+		task1.TriangleWithException triangle2;
 		
 		try {
 				
