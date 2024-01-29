@@ -1,6 +1,6 @@
 /**********************************************
 Assignment 1
-Course:Advanced Java Programming - Semester 2
+Course: Advanced Java Programming - Semester 2
 Last Name: Zhu
 First Name: Kexin
 ID: n01621302
@@ -12,7 +12,6 @@ Date:<submission date>
 
 package task1;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TestTriangle {
@@ -30,7 +29,7 @@ public class TestTriangle {
 		Scanner kbd = new Scanner(System.in);
 		
 		double side1, side2, side3;
-		boolean filled, go;
+		boolean filled, exit;
 		
 		// prompts the user to enter three sides of the triangle, a
 		// color, and a Boolean value to indicate whether the triangle
@@ -47,12 +46,12 @@ public class TestTriangle {
 		do {
 			System.out.print("Is the triangle filled? Enter \"true\" for yes, \"false\" for no: ");
 			while(!kbd.hasNextBoolean()) {
-				System.out.println("Enter \"true\" or \"false\"");
+				System.err.println("Enter \"true\" or \"false\"");
 				kbd.next();
 			}
 			filled = kbd.nextBoolean();
-			go = false;
-		} while(go);
+			exit = false;
+		} while(exit);
 
 		// create a Triangle object with the given input
 		Triangle triangle = new Triangle(side1, side2, side3);
@@ -64,6 +63,7 @@ public class TestTriangle {
 		return triangle;
 	}
 
+	// method to validate the input value of sides is positive double
 	private static double defineSide(String message, Scanner scan) {
 		boolean sideIsValid = false;
 		double side = -1;
