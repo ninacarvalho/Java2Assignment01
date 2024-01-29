@@ -65,23 +65,24 @@ public class TestTriangle {
 
 	// method to validate the input value of sides is positive double
 	private static double defineSide(String message, Scanner scan) {
-		boolean sideIsValid = false;
+		boolean sideIsValid = true;
 		double side = -1;
 
-		while(!sideIsValid) {
+		do {
 			System.out.println(message);
-			String input = scan.nextLine();
-			try {
-				side = Double.parseDouble(input);
+			try {	
+				side = scan.nextDouble();
 				if (side <= 0) {
 					System.err.printf("Side must be greater than 0.\n");
 				} else {
-					sideIsValid = true;
+					sideIsValid = false;
 				}
-			} catch (Exception e) {
+			} catch (InputMismatchException e) {
 				System.err.println("Invalid input. Please type in a positive number");
+				scan.nextLine();
 			}
-		}
+		}while(sideIsValid);
+		
 		return side;
 	}
 }
