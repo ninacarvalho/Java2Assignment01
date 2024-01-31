@@ -7,7 +7,7 @@ public abstract class GeometricObject {
 	private boolean filled;
 			
 	// no-arg constructor
-	public GeometricObject(){
+	public GeometricObject() {
 		this.color = "white";
 	}
 			
@@ -40,5 +40,3 @@ public abstract class GeometricObject {
 	// abstract method getPerimeter()
 	public abstract double getPerimeter();	
 }
-
-

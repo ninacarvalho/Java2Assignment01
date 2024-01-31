@@ -18,7 +18,7 @@ public class TestClass1 {
 		Scanner kbd = new Scanner(System.in);
 			
 		double side1, side2, side3;
-		boolean filled, exit;
+		boolean filled;
 		
 		// prompts the user to enter information of triangle
 		System.out.println("Enter three sides of the triangle: ");
@@ -30,16 +30,13 @@ public class TestClass1 {
 		System.out.print("Enter filled color: ");
 		String color = kbd.next();
 			
-		do {
-			System.out.print("Is the triangle filled? Enter \"true\" for yes, \"false\" for no: ");
-			while(!kbd.hasNextBoolean()) {
-				System.err.println("Enter \"true\" or \"false\"");
-				kbd.next();
-			}
-			filled = kbd.nextBoolean();
-			exit = false;
-		}while(exit);
-				
+		System.out.print("Is the triangle filled? Enter \"true\" for yes, \"false\" for no: ");
+		while(!kbd.hasNextBoolean()) {
+			System.err.println("Enter \"true\" or \"false\"");
+			kbd.next();
+		}
+		filled = kbd.nextBoolean();
+
 		// create a Triangle object with the given input
 		Triangle triangle = new Triangle(side1, side2, side3);
 		triangle.setColor(color);
@@ -52,16 +49,15 @@ public class TestClass1 {
 	
 	// method to validate the input value of sides is positive double
 	private static double defineSide(String message, Scanner scan) {
-		
 		boolean sideIsValid = true;
 		double side = -1;
-		
+
 		do {
 			System.out.println(message);
 			try {	
 				side = scan.nextDouble();
 				if (side <= 0) {
-					System.err.printf("Side must be greater than 0.\n");
+					System.err.println("Side must be greater than 0.");
 				} else {
 					sideIsValid = false;
 				}
@@ -69,8 +65,7 @@ public class TestClass1 {
 				System.err.println("Invalid input. Please type in a positive number");
 				scan.nextLine();
 			}
-		}while(sideIsValid);
-		
+		} while(sideIsValid);
 		return side;
 	}
 }

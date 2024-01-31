@@ -1,13 +1,13 @@
 package assignment1Final;
 
-public class Triangle extends GeometricObject{
+public class Triangle extends GeometricObject {
 	
 	// fields named side1, side2, and side3 with default
 	// values 1.0 to denote three sides of the triangle
 	private double side1, side2, side3;
 			
 	// no-arg constructor that creates a default triangle
-	public Triangle(){
+	public Triangle() {
 		side1 = 1.0;
 		side2 = 1.0;
 		side3 = 1.0;
@@ -15,7 +15,7 @@ public class Triangle extends GeometricObject{
 			
 	// constructor that creates a triangle with the specified
 	// side1, side2, and side3.
-	public Triangle(double side1, double side2, double side3){
+	public Triangle(double side1, double side2, double side3) {
 		this.side1 = side1;
 		this.side2 = side2;
 		this.side3 = side3;
@@ -37,7 +37,7 @@ public class Triangle extends GeometricObject{
 	// method named getArea() that returns the area of this triangle
 	@Override
 	public double getArea() {
-		double s = (getPerimeter()) / 2;
+		double s = (getPerimeter())/2;
 		return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
 	}
 			
@@ -47,12 +47,10 @@ public class Triangle extends GeometricObject{
 	public double getPerimeter() {
 		return side1 + side2 + side3;
 	}
-			
 	//  method named toString() that returns a string description for
 	// the triangle
 	@Override
 	public String toString() {
-			
 		return "Triangle" +
 				"\nSide1: " + String.format("%.2f", getSide1()) + 
 				"\nSide2: " + String.format("%.2f", getSide2()) + 

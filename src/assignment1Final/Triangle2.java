@@ -6,7 +6,7 @@ public class Triangle2 extends GeometricObject{
 	private double side1, side2, side3;
 				
 	// no-arg constructor that creates a default triangle
-	public Triangle2(){
+	public Triangle2() {
 		side1 = 1.0;
 		side2 = 1.0;
 		side3 = 1.0;
@@ -61,7 +61,6 @@ public class Triangle2 extends GeometricObject{
 	// the triangle
 	@Override
 	public String toString() {
-				
 		return "Triangle" +
 				"\nSide1: " + String.format("%.2f", getSide1()) + 
 				"\nSide2: " + String.format("%.2f", getSide2()) + 
